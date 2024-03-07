@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectsRequest;
 use App\Http\Requests\UpdateProjectsRequest;
+use App\Models\Type;
+
 
 
 
@@ -34,7 +36,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $types = Type::all();
+        return view('admin.projects.create', ['types' => $types]);
     }
 
     /**
@@ -57,10 +60,10 @@ class ProjectController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Project $project)
-    {
-
-        return view('admin.projects.update', compact('project'));
     
+    {
+        $types = Type::all();
+        return view('admin.projects.update', ['types' => $types, 'project'=>$project]);
     }
 
     /**

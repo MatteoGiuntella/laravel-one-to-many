@@ -26,6 +26,7 @@ class UpdateProjectsRequest extends FormRequest
             'title'=>'required|max:64',
             'description'=>'required|max:5000',
             'date'=>'required|max:64|date',
+            'type_id' => 'nullable|exists:types,id',
         ];
     }
     public function messages(): array

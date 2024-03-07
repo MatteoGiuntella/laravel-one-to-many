@@ -51,6 +51,23 @@
                 </div>
             @enderror
         </div>
+        <div class="mb-3">
+            <label for="type_id" class="form-label">Type</label>
+            <select name="type_id" id="type_id" class="form-select">
+                <option
+                    value=""
+                    {{ old('type_id') == null ? 'selected' : '' }}>
+                    Add Type
+                </option>
+                @foreach ($types as $type)
+                    <option
+                        value="{{ $type->id }}"
+                        {{ old('type_id') == $type->id ? 'selected' : '' }}>
+                        {{ $type->title }}
+                    </option>
+                @endforeach
+            </select>
+        </div>
 
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>

@@ -21,11 +21,15 @@
                                 {{ $project->date }}
                             </li>
                             <li>
+                                {{ $project->type->title }}
+                            </li>
+                            <li>
                                 {{ $project->url }}
                             </li>
                         </ul>
                     </div>
                 </div>
+                
             </div>
 
         </div>

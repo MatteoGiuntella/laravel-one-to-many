@@ -16,6 +16,7 @@ class TypeSeeder extends Seeder
     public function run(): void
     {
         Schema::withoutForeignKeyConstraints(function () {
+            
             Type::truncate();
         });
 
