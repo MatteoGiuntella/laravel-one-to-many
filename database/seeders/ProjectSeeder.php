@@ -22,6 +22,7 @@ class ProjectSeeder extends Seeder
             $project->slug = Str::slug($project->title);
             $project->date = fake()->dateTime();
             $project->description = fake()->paragraph();
+            $project->type_id = fake()->paragraph();
             $project->save();
         }
        
